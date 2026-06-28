@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compiling Torn Company Data</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#work-experience">Experience</a>
+        <a href="../index.html#hackathons">Hackathons</a>
+        <a href="../index.html#personal-projects">Personal Projects</a>
+        <a href="../index.html#school-projects">School Projects</a>
+        <a href="../index.html#skills">Skills</a>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Torn.com Company Data Tracker</h1>
+            <p class="subtitle">Nov. 2024 - Jun. 2026</p>
+            <p><a href="../index.html">&larr; Back to Home</a></p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Project Overview</h2>
+                <ul>
+                    <li>Engineered an automated daily data ingestion pipeline using Python and AWS Lambda to track over 300 player run companies in the MMORPG Torn over an 18 month period.</li>
+                    <li>Treated a complex video game economy as a live data science problem, analyzing strategies from actual human competitors rather than made up test data.</li>
+                    <li>Applied statistical modeling to reverse engineer hidden game mechanics and calculate the exact mathematical ideal for workforce efficiency ratios.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Technologies Used</h2>
+                <ul>
+                    <li>Python</li>
+                    <li>AWS Lambda</li>
+                    <li>Torn API</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>GitHub Repository</h2>
+                <p><a href="https://github.com/MateoTaylor/Compiling-Torn-Company-Data" target="_blank">View the full project on GitHub</a></p>
+            </section>
+
+            <section>
+                <h2>Details</h2>
+                <p>Torn is a massive browser based MMORPG that I've been playing for 8~ years with a surprisingly complex player driven economy. 
+                    In the game, players can run their own companies where they hire other players as employees and compete against human directors for market share. 
+                </p>
+                <p> The catch is that the exact mechanics dictating company efficiency and profitability are intentionally kept opaque by the developers. 
+                    I thought it'd be a fun challenge to aggressively optimize my in-game business, so I decided to treat the whole mechanic as a live data science problem.
+                    I built a Python script that hooks into Torn's API to pull daily operational metrics from over 300 competing companies. 
+                    To make sure I never missed a snapshot, I deployed the pipeline on AWS Lambda, which automatically grabbed and stored the data every single day from November 2024 to June 2026.</p>
+                </p>
+                <figure>
+                    <img src="../images/torn-company-1.png" style="max-width: 100%; height: auto; margin: 20px 0;">
+                    <figcaption><i>One of my personal output spreadsheets</i></figcaption>
+                </figure>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Mateo</p>
+        </footer>
+    </div>
+</body>
+</html>

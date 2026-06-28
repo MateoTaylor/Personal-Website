@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexHacks 2026</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#work-experience">Experience</a>
+        <a href="../index.html#competitions">Competitions</a>
+        <a href="../index.html#personal-projects">Personal Projects</a>
+        <a href="../index.html#school-projects">School Projects</a>
+        <a href="../index.html#skills">Skills</a>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>NexHacks 2026</h1>
+            <p class="subtitle">Carnegie Mellon University</p>
+            <p><a href="../index.html">&larr; Back to Home</a></p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Competition Overview</h2>
+                <ul>
+                    <li><strong>Placement:</strong> 1st of 282 teams in Healthcare track.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Project Links</h2>
+                <p><a href="https://devpost.com/software/smartpt-k1d5h0" target="_blank">View the Devpost submission</a></p>
+                <p><a href="https://github.com/Geaboi/NexHacks" target="_blank">View the GitHub repository</a></p>
+            </section>
+
+            <section>
+                <h2>Technologies Used</h2>
+                <ul>
+                    <li>Flutter</li>
+                    <li>Python</li>
+                    <li>C++</li>
+                    <li>Embedded Systems</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Details</h2>
+                <p> For this project I worked with two new teammates: Aditya Pulipuka (UT Austin) and Dustin Nguyen (UF). 
+                    They were both really fun to work with and I was really excited about this project because computer vision
+                    has been a personal interest of mine for a while. I handled a lot of our RTMpose setup and inference, while Aditya
+                    did some crazy cool hardware work and Dustin fully reverse engineered Overshoot's (an event sponsor) entire WebRTC pipeline
+                    to stream video at a good bitrate.
+                </p>
+
+                <figure>
+                    <img src="../images/nexhacks-1.png" style="max-width: 100%; height: auto; margin: 20px 0;">
+                    <figcaption><i>Holding up the big check</i></figcaption>
+                </figure>
+
+                <p>SmartPT was built to help patients recover more safely at home after injuries like torn ACLs,
+                     where making repeated in-person PT visits can be difficult and exhausting.
+                      The project focuses on giving patients a more detailed level of feedback than they would normally get
+                       in a clinic, while also helping clinicians access more measurable recovery data from anywhere.</p>
+                    
+                <p>While working we focused on precision and reliability as central design goals.
+                     The system combines 3D pose estimation with physical IMU sensor data so it can
+                      estimate positions and angles more accurately, then uses video segmentation and filtering 
+                      to smooth the results and reduce visual jitter. That setup lets the platform provide real-time therapy
+                       guidance while keeping the metrics interpretable and useful for both patients and doctors.</p>
+                <figure>
+                    <img src="../images/nexhacks-2.png" style="max-width: 100%; height: auto; margin: 20px 0;">
+                    <figcaption><i>Pose estimation in action</i></figcaption>
+                </figure>
+                
+
+                <figure>
+                    <img src="../images/nexhacks-3.png" style="max-width: 100%; height: auto; margin: 20px 0;">
+                    <figcaption><i>Believe it or not, 1.5 hours of sleep over 2 days leaves you a little tired</i></figcaption>
+                </figure>
+
+
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 Mateo</p>
+        </footer>
+    </div>
+</body>
+</html>

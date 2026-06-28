@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust Reinforcement Learning</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#work-experience">Experience</a>
+        <a href="../index.html#school-projects">School Projects</a>
+        <a href="../index.html#personal-projects">Personal Projects</a>
+        <a href="../index.html#competitions">Competitions</a>
+        <a href="../index.html#skills">Skills</a>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Rust Reinforcement Learning</h1>
+            <p class="subtitle">Sep. 2025 - Jan. 2026</p>
+            <p><a href="../index.html">&larr; Back to Home</a></p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Project Overview</h2>
+                <ul>
+                    <li>Designed an RL-vision agent that navigates a real time 3D game environment and gathers resources.</li>
+                    <li>Trained machine learning model from scratch using 500+ hours of video game footage, using a combination of imitation and reinforcement learning in a custom C# training environment.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Technologies Used</h2>
+                <ul>
+                    <li>A frankly embarrassing amount of time and GPU compute</li>
+                    <li>C#</li>
+                    <li>Python</li>
+                    <li>PyTorch</li>
+                </ul>
+
+            <section>
+                <h2>GitHub Repository</h2>
+                <p><a href="https://github.com/MateoTaylor/Rust-Reinforcement-Learning" target="_blank">View the full project on GitHub</a></p>
+            </section>
+
+            <section>
+                <h2>Details</h2>
+                    <p>This is probably my most ambitious project (and my favorite) to date, so please feel free to ask me about it more because I can yap for hours. 
+                     I originally started just building a YOLO model to detect resource nodes in Rust, 
+                    but had done some RL before and decided to extend the project. I had seen OpenAI's paper on training VLM to play Minecraft 
+                    and wanted to replicate that for Rust, a survival game I played a lot in high school. 
+                    Starting out, I hit aroadblock pretty quickly: getting a stable training environment since Rust obviously doesn't have an existing gym. 
+                    To fix that, I spent roughly 2 months writing custom C# plugins from scratch to manage the environment state, record frames, reset the model, and handle map generation. 
+                    Building out all that infrastructure is something people usually take for granted in standard RL setups so it was a good way to learn about the full RL pipeline.</p>
+                
+                <figure>
+                    <img src="../images/rust-rl-1.png" style="max-width: 100%; height: auto; margin: 20px 0;">
+                    <figcaption><i>I think it's learning something?</i></figcaption>
+                </figure>
+                
+                <p>Tuning the action space took a lot of experimentation across continuous and discrete configurations to map to a very small sequence of actions. 
+                To actually get the model learning, I leaned heavily on imitation learning (pure RL-vision is unrealistic unless you happen to have 400GB of VRAM and a distributed training setup I can borrow).
+                 I recorded dozens of hours of my own gameplay and wrote automation scripts to build a baseline dataset. I then pre-trained the model on that imitation data and fine-tuned it with about
+                  500 to 600 hours of PPO reinforcement learning. As I'm writing this in June 2026, my current model is a little noisy but can consistently navigate to and breaks rock nodes, 
+                  I'm currently working on making it more consistent across different scenarios.</p>
+
+
+                <p>Once the environment was set up, I found that standard RL frameworks were highly unstable for this kind of visual input. As a note, my agent only takes raw pixel data as input (no access to the physics engine
+                    or anything fancy like that). Training a backbone that could process Rust's intense environmental noise has been incredibly difficult. 
+                    I started with a custom CNN, then tested out ResNet backbones with standard MLPs and recurrent action experts before landing on my current architecture. 
+                    Right now I am running a YOLO backbone where I pass features from the last layers of the YOLO neck along with outputs from the detection heads.
+                    This is good because I'm can fine-tune the visual model to specifically spot the resources the agent needs. From there, the visual data feeds into a lightweight Transformer
+                    acting as the action expert (SmolVLA inspired).</p>
+                
+                <figure>
+                    <img src="../images/rust-rl-2.png" style="max-width: 100%; height: auto; margin: 20px 0;">
+                    <figcaption><i>YOLO backbone was surprisingly effective</i></figcaption>
+                </figure>
+                
+                  <figure>
+                  <img src="../images/rust-rl-3.png" style="max-width: 100%; height: auto; margin: 20px 0;">
+                  <figcaption><i>POV you just spent four A100 compute hours overfitting to absolute garbage</i></figcaption>
+                </figure>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 Mateo</p>
+        </footer>
+    </div>
+</body>
+</html>

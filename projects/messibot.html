@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MessiBot: ACT Imitation Learning in Robotics</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#work-experience">Experience</a>
+        <a href="../index.html#hackathons">Hackathons</a>
+        <a href="../index.html#personal-projects">Personal Projects</a>
+        <a href="../index.html#school-projects">School Projects</a>
+        <a href="../index.html#skills">Skills</a>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>MessiBot: ACT Imitation Learning in Robotics</h1>
+            <p class="subtitle">School Project</p>
+            <p><a href="../index.html">&larr; Back to Home</a></p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Project Overview</h2>
+                <ul>
+                    <li>Taught a robot to play soccer using ACT imitation learning.</li>
+                    <li>Collected teleoperation data, trained the model in Colab, and packaged the workflow so the datasets and checkpoints could be shared on Hugging Face.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Expanded Details</h2>
+                <p>As our final project for robotics seminar, I chose to build MessiBot, a SO101 robot designed to kick a ball towards a goal. The project
+                    was built in collaboration with another team, who used classical control to make a goalkeeper robot.
+                    MessiBot was built as a full imitation-learning robotics pipeline, with custom teleoperated recording and inference on a lab machine.
+                    I wrote and modified teleoperation scripts so we could record without a leader arm, uploaded the datasets to Hugging Face Hub, and ran inference locally.
+                    I then trained the ACT (Action Chunking Transformer) model in a Google Colab notebook on an A100 with 40GB of VRAM.</p>
+
+                <p>The final workflow is organized around reproducibility: the trained models, 
+                    initial dataset, and both finetuning datasets are all hosted on Hugging Face, a
+                    long with the intermediate artifacts used during development.
+                     That made it easier to iterate on the robot's soccer behavior, 
+                     test new policies, and keep the project accessible outside of my local environment.</p>
+
+                <figure>
+                    <div style="max-width: 100%; margin: 20px 0; padding: 24px; border: 1px dashed #999; border-radius: 12px; text-align: center; background: rgba(0, 0, 0, 0.03);">
+                        <iframe
+                            src="https://drive.google.com/file/d/1JifMX71atcuQ5TbXn_D-WP-wu1KT8dEQ/preview"
+                            width="100%"
+                            height="480"
+                            allow="autoplay"
+                            style="border: 0; display: block;"
+                            title="Final demo video"
+                        ></iframe>
+                    </div>
+                    <figcaption><i>Final Demo Video</i></figcaption>
+                </figure>
+
+                <figure>
+                    <img src="../images/messibot-1.png" style="max-width: 100%; height: auto; margin: 20px 0;">
+                    <figcaption><i>Robot top camera</i></figcaption>
+                </figure>
+
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 Mateo</p>
+        </footer>
+    </div>
+</body>
+</html>

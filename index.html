@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mateo Taylor Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#education">Education</a>
+        <a href="#work-experience">Experience</a>
+        <a href="#hackathons">Hackathons</a>
+        <a href="#personal-projects">Personal Projects</a>
+        <a href="#school-projects">School Projects</a>
+        <a href="#skills">Skills</a>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Mateo Taylor</h1>
+            <p>I like to code stuff! Click on anything you think is interesting :)</p>
+            <p> <a href="https://github.com/mateo">GitHub</a> | <a href="https://linkedin.com/in/mateo">LinkedIn</a></p>
+            <p class="interests"><b>Interests:</b> DevOps | SRE/Operations | Reinforcement Learning | Data Engineering | Data Science</p>
+
+        </header>
+
+        <main>
+            <section id="education">
+                <h2>Education</h2>
+                <div class="entry">
+                    <h3>Haverford College</h3>
+                    <p class="subtitle">B.A. in Computer Science & Sociology, Minor in Statistics | Sep. 2023 - May 2027 | GPA: 3.9</p>
+                </div>
+                <div class="entry">
+                    <h3>University of Pennsylvania</h3>
+                    <p class="subtitle">4+1 M.S. in Computer Information Science | Sep. 2025 - May 2028 | GPA: 4.0</p>
+                </div>
+            </section>
+
+            <section id="work-experience">
+                <h2>Work Experience</h2>
+                <div class="entry">
+                    <h3>DevOps Intern</h3>
+                    <p class="subtitle"><b>NBCUniversal</b> (Stamford, CT) | Summer 2026</p>
+                    <ul>
+                        <li>Monitored GitHub continuous delivery (CD) pipelines and engineered automated diffing tools, proactively mitigating broadcast risks for 150+ concurrent streaming channels.</li>
+                        <li>Developed custom EC2 lookup tools that accelerated diagnostic times and fortified infrastructure stability for a 15-engineer distribution team during high-stakes World Cup operations.</li>
+                    </ul>
+                </div>
+                <div class="entry">
+                    <h3>Sociology Research Assistant</h3>
+                    <p class="subtitle"><b>Haverford College</b> | Sep. 2025 - Present</p>
+                    <ul>
+                        <li>Collaborated with Prof. Matt McKeever to run statistical analyses on child support patterns across single-father households.</li>
+                        <li>Used Python to process over 300,000 entries across 22 years of CPS economic data, cross-referencing details with IPUMS API and Census Bureau API.</li>
+                        <li>Prepared datasets for submission to the 2026 ASA Conference.</li>
+                    </ul>
+                </div>
+                <div class="entry">
+                    <h3>Data Engineering Intern</h3>
+                    <p class="subtitle"><b>Roundhouse One</b> (San Francisco, CA) | Summer 2025</p>
+                    <ul>
+                        <li>Used Flutter to build an iOS mobile app for managing and tracking hardware deployments, reducing validation errors by 40%.</li>
+                        <li>Integrated app into AWS serverless infrastructure (API Gateway, Lambda, Redshift, S3), enabling secure data syncing.</li>
+                        <li>App was used to automate data ingestion and deployments for a team of 20+ technicians and clients.</li>
+                    </ul>
+                </div>
+                <div class="entry">
+                    <h3>Computer Science Teaching Assistant</h3>
+                    <p class="subtitle"><b>Haverford College</b> | Sep. 2024 - Present</p>
+                    <ul>
+                        <li>Selected to TA CS355: Robotics, CS260: Data Science, and CS105: Intro to Programming.</li>
+                        <li>Mentored students in Python and machine learning techniques. Responsibilities include facilitating weekly lab sessions, holding office hours, and grading assignments.</li>
+                    </ul>
+                </div>
+                <div class="entry">
+                    <h3>Research Intern</h3>
+                    <p class="subtitle"><b>Aflac</b> (Manhattan, NY) | Summer 2024</p>
+                    <ul>
+                        <li>Volunteered to lead a team of 10 interns through researching quarterly financial documentation between 2022-2024.</li>
+                        <li>Presented analysis on the impact of COVID-19 on Aflac US & Japan's fixed maturity securities portfolios.</li>
+                        <li>Condensed findings into a 30-minute presentation for senior management.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="hackathons">
+                <h2>Hackathons & Coding Competitions</h2>
+                <ul>
+                    <li><strong><a href="competitions/nexhacks-2026.html">NexHacks 2026</a>:</strong> 1st of 282 teams in Healthcare track (Carnegie Mellon University)</li>
+                    <li><strong><a href="competitions/hophacks-2025.html">HopHacks 2025</a>:</strong> 2nd of 102 teams Overall & 2nd Place in Healthcare track (Johns Hopkins University)</li>
+                    <li><strong><a href="competitions/pennapps-2025.html">PennApps 2025</a>:</strong> 1st of 85 teams in Bloomberg Sustainability track (University of Pennsylvania)</li>
+                    <li><strong><a href="competitions/tencent-2025.html">TencentAI Global Open 2025 - Intelligent Agent Gaming Algorithms</a>:</strong> Top 16 of 336 International Teams</li>
+                    <li><strong><a href="competitions/tencent-2026.html">TencentAI Global Open 2026 - Intelligent Agent Gaming Algorithms</a>:</strong> Top 16 of 682 International Teams</li>
+                </ul>
+            </section>
+
+            <section id="personal-projects">
+                <h2>Personal Projects</h2>
+                <div class="entry">
+                    <h3><a href="projects/rust-rl.html">Rust Reinforcement Learning</a></h3>
+                    <p class="subtitle">Sep. 2025 - Present</p>
+                    <ul>
+                        <li>A reinforcement learning agent trained to gather resources in the 3D game environment of Rust.</li>
+                        <li>Model was initialized with behavioral cloning on 5 hours of recorded data, then trained in a custom C# training environment for over 500 hours of gameplay.</li>
+                        <li>Final architecture uses a custom YOLOv26 visual backbone, feeding into a GRU action expert. Reinforcement learning was performed using recurrent PPO (Proximal Policy Optimization).</li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <h3><a href="projects/torn-company-data.html">Torn.com Company Data Tracker</a></h3>
+                    <p class="subtitle">Nov. 2024 - Jun. 2026</p>
+                    <ul>
+                        <li>Engineered an automated daily data ingestion pipeline using Python and AWS Lambda to track over 300 player run companies on Torn.com over an 18 month period.</li>
+                        <li>Treated a complex video game economy as a data science problem, analyzing strategies from actual human competitors rather than made up test data.</li>
+                        <li>Applied statistical modeling to reverse engineer hidden game mechanics and calculate the exact mathematical ideal for workforce efficiency ratios.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="school-projects">
+                <h2>School Projects</h2>
+                <div class="entry">
+                    <h3><a href="projects/messibot.html">CS355: MessiBot - ACT Imitation Learning in Robotics</a></h3>
+                    <p class="subtitle">Apr. 2026 - May 2026</p>
+                    <ul>
+                        <li>Taught a hugging face S0101 robot to shoot penalty kicks against another goalkeeper robot.</li>
+                        <li>Used behavioral cloning to train an ACT (Action Chunking Transformer) model on 180 teleoperated episodes.</li>
+                        <li>Presented final results to 50 students and faculty members across the computer science, physics, and mathematics departments.</li>
+                    </ul>
+                </div>
+                <div class="entry">
+                    <h3><a href="projects/traffic-music.html">CS5020: Predicting Traffic Congestion from Accidents with Music Listening Patterns</a></h3>
+                    <p class="subtitle">Oct. 2025 - Dec. 2025</p>
+                    <ul>
+                        <li>A machine learning analysis that predicts severity of traffic accidents using various environmental, temporal, human, and musical factors.</li>
+                        <li>Compared regression methods, tree based models, and neural networks on a dataset of 7.7 million traffic accident records while evaluating the added value of Spotify charts data.</li>
+                        <li>Presented final results to a recitation of other graduate students and graduate teaching assistants.</li>
+                    </ul>
+                </div>
+                <div class="entry">
+                    <h3>SOCL217: Behind the Hoodies and Poor Hygiene: How Hackathons Prepare Students Professionally</h3>
+                    <p class="subtitle">Sep. 2025 - May 2026</p>
+                    <ul>
+                        <li>A yearlong qualitative research project examining how hackathon participation relates to startup development and the tech industry at large.</li>
+                        <li>Project involved participatory observation of 6 hackathons across the east coast, along with semi-structuredinterviews with organizers and sponsors. Interviews and field notes were analyzed to understand how participants express motivation to attend events.</li>
+                        <li>Initial findings are being used as a foundation for an upcoming senior thesis in sociology next year.</li>
+                    </ul>
+                </div>
+                <div class="entry">
+                    <h3>SOCL215: Brooklyn Housing Development Analysis</h3>
+                    <p class="subtitle">Feb. 2025 - May 2025</p>
+                    <ul>
+                        <li>A 22 page data statistical paper investigating 10-year zoning and housing growth trends in Brooklyn.</li>
+                        <li>The paper builds upon previous studies of Prospect Heights and Park Slope, specifically focusing on the relationship between city subsidized luxury housing development and Prospect Lefferts' economic demographics.</li>
+                        <li>Analysis includes cleaning, merging, and visualizing 65,000+ construction projects using R, GeoPandas, and ArcGIS.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <p><strong>Programming:</strong> Python, C/C++, R, SQL, Dart, Java</p>
+                <p><strong>Dev Tools:</strong> Git, Linux, Tableau, PyTorch, Pandas, Flutter, AWS Cloud, Cloudflare, Microsoft Office, FastAPI, Django</p>
+                <p><strong>Extracurriculars:</strong> Havercode Board Member, Hackathon Coordinator, Quantum Computing Club, Cycling Club</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
