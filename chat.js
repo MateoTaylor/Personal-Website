@@ -5,7 +5,7 @@
     const MAX_TURNS = 12; // the Worker ignores anything older
     const SUGGESTIONS = [
         "What is Mateo working on right now?",
-        "Is a chatbot really necessary for this portfolio site?",
+        "Is a chatbot really necessary for some random portfolio site?",
         "Does this guy know anything about machine learning?",
     ];
     const URL_PATTERN = /https?:\/\/[^\s<>()]+/g;
