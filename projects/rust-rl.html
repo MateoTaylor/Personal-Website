@@ -18,7 +18,7 @@
     <div class="container">
         <header>
             <h1>Rust Reinforcement Learning</h1>
-            <p class="subtitle">Sep. 2025 - Jan. 2026</p>
+            <p class="subtitle">Sep. 2025 - Jul. 2026</p>
             <p><a href="../index.html">&larr; Back to Home</a></p>
         </header>
 
@@ -61,8 +61,8 @@
                 
                 <p>Tuning the action space took a lot of experimentation across continuous and discrete configurations to map to a very small sequence of actions. 
                 To actually get the model learning, I leaned heavily on imitation learning (pure RL-vision is unrealistic unless you happen to have 400GB of VRAM and a distributed training setup I can borrow).
-                 I recorded dozens of hours of my own gameplay and wrote automation scripts to build a baseline dataset. I then pre-trained the model on that imitation data and fine-tuned it with about
-                  500 to 600 hours of PPO reinforcement learning. As I'm writing this in June 2026, my current model is a little noisy but can consistently navigate to and breaks rock nodes, 
+                 I recorded 10 hours of my own gameplay and wrote automation scripts to build a baseline dataset. I then pre-trained the model on that imitation data and fine-tuned it with about
+                  500 to 600 hours of PPO reinforcement learning. As I'm writing this in July 2026, my current model is a little noisy but can consistently navigate to and breaks rock nodes, 
                   I'm currently working on making it more consistent across different scenarios.</p>
 
 
@@ -70,8 +70,8 @@
                     or anything fancy like that). Training a backbone that could process Rust's intense environmental noise has been incredibly difficult. 
                     I started with a custom CNN, then tested out ResNet backbones with standard MLPs and recurrent action experts before landing on my current architecture. 
                     Right now I am running a YOLO backbone where I pass features from the last layers of the YOLO neck along with outputs from the detection heads.
-                    This is good because I'm can fine-tune the visual model to specifically spot the resources the agent needs. From there, the visual data feeds into a lightweight Transformer
-                    acting as the action expert (SmolVLA inspired).</p>
+                    This is good because I'm can fine-tune the visual model to specifically spot the resources the agent needs. From there, the visual data feeds into a GRU acting as the action expert.
+                    I also experimented with a lightweight Transformer action expert (SmolVLA inspired), but ended up going with the GRU.</p>
                 
                 <figure>
                     <img src="../images/rust-rl-2.png" style="max-width: 100%; height: auto; margin: 20px 0;">

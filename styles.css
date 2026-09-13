@@ -1,11 +1,16 @@
 :root {
-    --bg-color: #121212;
-    --text-color: #e0e0e0;
-    --heading-color: #ffffff;
-    --link-color: #82aaff;
-    --link-hover: #c3e88d;
-    --subtitle-color: #a0a0a0;
-    --border-color: #333333;
+    /* Forest palette: deep pine ground, moss structure, leaf-green accents */
+    --bg-color: #0d1210;
+    --bg-raised: #131b16;
+    --text-color: #dfe7dd;
+    --heading-color: #f2f7ef;
+    --link-color: #7fbf6a;
+    --link-hover: #a8dc8f;
+    --subtitle-color: #9db09c;
+    --border-color: #223028;
+    --accent: #7fbf6a;
+    --accent-deep: #3f6b4a;
+    --accent-soft: rgba(127, 191, 106, 0.12);
 }
 
 html {
@@ -14,10 +19,12 @@ html {
 
 body {
     background-color: var(--bg-color);
+    background-image: radial-gradient(ellipse at 50% -10%, #16211a 0%, var(--bg-color) 60%);
+    background-attachment: fixed;
     color: var(--text-color);
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.5;
     margin: 0;
     padding: 0;
 }
@@ -25,8 +32,9 @@ body {
 .navbar {
     position: sticky;
     top: 0;
-    background-color: rgba(18, 18, 18, 0.95);
+    background-color: rgba(13, 18, 16, 0.92);
     border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 1px 0 rgba(127, 191, 106, 0.15);
     padding: 0.8rem 1.5rem;
     display: flex;
     justify-content: center;
@@ -40,11 +48,15 @@ body {
 .navbar a {
     color: var(--text-color);
     font-weight: 500;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
 }
 
 .navbar a:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: var(--link-hover);
+    border-bottom-color: var(--accent);
 }
 
 .container {
@@ -66,6 +78,10 @@ header {
     margin: 0.4rem 0;
 }
 
+.interests b {
+    color: var(--accent);
+}
+
 h1, h2, h3 {
     color: var(--heading-color);
     margin-top: 0;
@@ -85,14 +101,16 @@ h1 {
 }
 
 h2 {
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.25rem;
-    margin-top: 1.5rem;
+    position: relative;
+    border-left: 3px solid var(--accent);
+    padding-left: 0.65rem;
+    margin-top: 1.75rem;
     font-size: 1.3rem;
+    letter-spacing: 0.01em;
 }
 
 h3 {
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.15rem;
     font-size: 1.05rem;
 }
 
@@ -111,8 +129,21 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Every section body sits in an .entry so the whole page shares one shape:
+   a moss rule on the left that brightens on hover. */
 .entry {
     margin-bottom: 1rem;
+    padding: 0.1rem 0 0.1rem 0.9rem;
+    border-left: 2px solid var(--accent-deep);
+    transition: border-color 0.2s;
+}
+
+.entry:hover {
+    border-left-color: var(--accent);
+}
+
+.entry h3 a {
+    color: var(--link-color);
 }
 
 .subtitle {
@@ -120,20 +151,85 @@ a:hover {
     font-size: 0.9rem;
     font-style: italic;
     margin-top: 0;
+    margin-bottom: 0.35rem;
+}
+
+.subtitle b {
+    color: var(--text-color);
+    font-style: normal;
+}
+
+/* Chips for dates, GPA and other short facts */
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.35rem 0 0;
+}
+
+.meta-item {
+    display: inline-block;
+    padding: 0.12rem 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background-color: var(--accent-soft);
+    color: var(--subtitle-color);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+.meta-item.highlight {
+    border-color: var(--accent-deep);
+    color: var(--accent);
+    font-weight: 500;
 }
 
 ul {
-    padding-left: 1.5rem;
+    padding-left: 1.25rem;
     margin-top: 0.25rem;
     margin-bottom: 0.5rem;
 }
 
 li {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.3rem;
+}
+
+li::marker {
+    color: var(--accent-deep);
 }
 
 .entry li {
-    color: #cacaca;
+    color: #c6d2c4;
+}
+
+/* Award list: competition name reads as the accent, result as body text */
+.award-list li {
+    margin-bottom: 0.45rem;
+}
+
+.award-list li::marker {
+    color: var(--accent);
+}
+
+.skills-list p {
+    margin: 0.4rem 0;
+}
+
+.skills-list strong {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+figure {
+    margin: 1.25rem 0;
+}
+
+figcaption {
+    color: var(--subtitle-color);
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 0.35rem;
 }
 
 footer {

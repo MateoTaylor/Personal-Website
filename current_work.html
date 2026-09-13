@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What I'm Working On</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="current_work.css">
+</head>
+<body class="cw-page">
+    <nav class="navbar">
+        <a href="current_work.html" class="nav-current" aria-current="page">What I'm Working On</a>
+        <a href="index.html#experience">Work Experience</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#hackathons">Competitions</a>
+        <a href="index.html#education">Education</a>
+    </nav>
+
+    <div class="container">
+        <header class="cw-header" id="top">
+            <h1>What I'm Working On</h1>
+            <p class="lede">
+                A running list of the projects I'm actively putting time into right now. Click any line for a full write-up, or just scroll.
+            </p>
+            <a class="back-link" href="index.html">&larr; Back to Home</a>
+        </header>
+
+        <main>
+            <section class="summary" aria-label="Quick rundown">
+                <h2>Overview</h2>
+                <ul class="summary-list">
+                    <li>
+                        <a class="name" href="#brawl-stars">Brawl Stars Reinforcement Learning</a>
+                        <span class="blurb">An RL agent and computer-vision pipeline that plays Brawl Stars at a competitive level, trained with PPO across ~300M simulated matches.</span>
+                        <span class="status">Ongoing</span>
+                    </li>
+                    <li>
+                        <a class="name" href="#hackathon-thesis">Senior Thesis &mdash; How Hackathons Prepare Students for Tech Careers</a>
+                        <span class="blurb">A two-year qualitative study of how hackathon participation feeds into startup formation and the tech industry.</span>
+                        <span class="status">Ongoing</span>
+                    </li>
+                </ul>
+            </section>
+
+            <div class="work-list">
+                <article class="work-item" id="brawl-stars">
+                    <h2>Brawl Stars Reinforcement Learning <span class="status">Active</span></h2>
+                    <div class="work-meta">
+                        <span class="chip">Jul. 2026 &ndash; Present</span>
+                        <span class="chip">Personal project</span>
+                        <span class="chip">Python &middot; PyTorch &middot; RL</span>
+                    </div>
+                    <p>
+                        I'm building a reinforcement learning agent that plays the mobile game
+                        Brawl Stars at a competitive level, paired with a computer-vision pipeline
+                        that reads game state straight from raw frames.
+                    </p>
+                    <ul>
+                        <li>Wrote a custom vectorized simulator that mirrors Brawl Stars' mechanics so I can run huge batches of matches in parallel instead of being bottlenecked by the real game.</li>
+                        <li>Training the policy with Proximal Policy Optimization (PPO) &mdash; roughly 300 million simulated matches so far.</li>
+                        <li>Documenting each stage of development in a YouTube series, which has passed 500,000 views.</li>
+                    </ul>
+                    <p class="work-links">
+                        <span aria-hidden="true">&middot;</span>
+                        <a href="https://github.com/MateoTaylor/Brawlstars-Reinforcement-Learning" target="_blank" rel="noopener">GitHub</a>
+                    </p>
+                    <a class="to-top" href="#top">&uarr; Back to top</a>
+                    <!-- Drop screenshots/gifs here once you have them:
+                    <figure>
+                        <img src="images/brawl-stars-1.png" style="max-width:100%;height:auto;margin:20px 0;">
+                        <figcaption><i>caption</i></figcaption>
+                    </figure>
+                    -->
+                </article>
+
+                <article class="work-item" id="hackathon-thesis">
+                    <h2>Senior Thesis &mdash; How Hackathons Prepare Students for Tech Careers <span class="status">Ongoing</span></h2>
+                    <div class="work-meta">
+                        <span class="chip">SOCL217 &amp; SOCL400</span>
+                        <span class="chip">Sep. 2025 &ndash; May 2027</span>
+                        <span class="chip">Qualitative research</span>
+                    </div>
+                    <p>
+                        A two-year-long qualitative research project examining how hackathon
+                        participation relates to startup development and the broader tech industry.
+                    </p>
+                    <ul>
+                        <li>Participatory observation of 7+ hackathons across the East Coast.</li>
+                        <li>Semi-structured interviews with hackathon organizers and sponsors.</li>
+                        <li>Preparing findings toward the final thesis due May 2027.</li>
+                    </ul>
+                    <p>
+                        If you're an organizer, company, or VC fund that sponsors hackathons, I'd
+                        love to hear from you about your experience and insights &mdash; feel free to
+                        reach out.
+                    </p>
+                    <a class="to-top" href="#top">&uarr; Back to top</a>
+                </article>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Mateo Taylor</p>
+        </footer>
+    </div>
+</body>
+</html>
