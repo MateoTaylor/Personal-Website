@@ -545,7 +545,15 @@ footer {
    Tune the 1700px ceiling to taste. */
 @media (min-width: 901px) and (max-width: 1700px) {
     body {
-        zoom: 0.9;
+        --page-zoom: 0.9;
+        zoom: var(--page-zoom);
+    }
+
+    /* zoom shrinks vh-based heights too, which left the sticky sidebar
+       ending ~10% short of the screen bottom; divide the zoom back out
+       so it fills the viewport like it does unzoomed */
+    .sidebar {
+        max-height: calc(100vh / var(--page-zoom) - 74px);
     }
 }
 
