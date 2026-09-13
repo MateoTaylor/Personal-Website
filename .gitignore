@@ -1,0 +1,4 @@
+# Wrangler build state and local secrets for chat-worker/
+.wrangler/
+.dev.vars*
+node_modules/

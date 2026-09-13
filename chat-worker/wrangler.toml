@@ -1,0 +1,14 @@
+name = "mateo-site-chat"
+main = "src/index.js"
+compatibility_date = "2026-06-01"
+
+[vars]
+# "-latest" tracks Google's current Flash-Lite model, so the bot keeps working
+# when older models are retired.
+GEMINI_MODEL = "gemini-flash-lite-latest"
+
+# Each visitor IP can send 10 messages per minute.
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
+simple = { limit = 10, period = 60 }
