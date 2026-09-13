@@ -538,6 +538,17 @@ footer {
 
 /* ---------- Responsive ---------- */
 
+/* On laptop-class screens the full-size layout reads as too large. Render the
+   page at 90% by default there, the same as manually setting browser zoom to
+   90%. External monitors (wider than 1700px) get the full-size layout; below
+   900px the single-column layout takes over and no zoom is applied.
+   Tune the 1700px ceiling to taste. */
+@media (min-width: 901px) and (max-width: 1700px) {
+    body {
+        zoom: 0.9;
+    }
+}
+
 @media (max-width: 900px) {
     .layout {
         grid-template-columns: 1fr;
