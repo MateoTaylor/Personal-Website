@@ -1,4 +1,4 @@
-// Chat widget for the home page. Questions go to the Cloudflare Worker in
+// Chat widget for the home and current-work pages. Questions go to the Cloudflare Worker in
 // chat-worker/, which holds the Gemini key and the context the bot answers from.
 (() => {
     const WORKER_URL = "https://mateo-site-chat.esume--ebsite.workers.dev";
