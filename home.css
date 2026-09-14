@@ -47,7 +47,7 @@ body::before {
     background-position: center 35%;
     background-size: cover;
     background-repeat: no-repeat;
-    opacity: 0.05;
+    opacity: 0.08;
     pointer-events: none;
 }
 
@@ -323,8 +323,14 @@ h2 {
     gap: 2rem;
 }
 
+/* each section is one squared-off panel: title bar on top, entries below
+   separated by hairline dividers. No overflow clipping here — it would
+   break the sticky title bar. */
 .feed-section {
     scroll-margin-top: 46px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
 }
 
 .anchor-alias {
@@ -337,13 +343,14 @@ h2 {
     display: flex;
     align-items: center;
     gap: 0.65rem;
-    margin: 0 0 1.15rem;
-    padding: 0.5rem 0;
+    margin: 0;
+    padding: 0.7rem 1.25rem;
     position: sticky;
     top: 43px;
-    background: var(--bg);
+    background: var(--surface-3);
     z-index: 5;
     border-bottom: 1px solid var(--border-strong);
+    border-radius: 3px 3px 0 0;
 }
 
 .feed-head h2 {
@@ -369,72 +376,101 @@ h2 {
     color: var(--accent-strong);
 }
 
+/* Personal / Academic groups inside the Projects panel */
 .subgroup + .subgroup {
-    margin-top: 1.75rem;
+    border-top: 1px solid var(--border-strong);
 }
 
 .subgroup-label {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--text);
-    padding-left: 0.6rem;
-    border-left: 3px solid var(--accent);
-    margin: 0 0 0.9rem;
+    color: var(--accent-strong);
+    background: var(--surface-1);
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 1.25rem;
+    margin: 0;
 }
 
 .stack {
     display: flex;
     flex-direction: column;
+}
+
+.stack > .card + .card {
+    border-top: 1px solid var(--border);
+}
+
+/* experience entries: logo spanning a two-line header
+   (role · dates / company · location), bullets below */
+
+.exp-head {
+    display: flex;
+    align-items: center;
     gap: 0.85rem;
 }
 
-/* experience entries: meta rail + body */
-
-.card-exp {
-    display: grid;
-    grid-template-columns: 170px 1fr;
-    gap: 1.4rem;
+/* sized to the combined height of the two header lines */
+.org-logo {
+    flex-shrink: 0;
+    width: 2.7rem;
+    height: 2.7rem;
+    object-fit: contain;
+    border-radius: 4px;
 }
 
-.exp-meta {
-    border-right: 1px solid var(--border);
-    padding-right: 1.4rem;
-    padding-top: 0.1rem;
+.org-logo.round {
+    border-radius: 50%;
+}
+
+.exp-lines {
+    flex: 1;
+    min-width: 0;
+}
+
+.exp-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 1rem;
+    line-height: 1.4;
+}
+
+/* right-hand item stays pinned right, even if it wraps on narrow screens */
+.exp-when,
+.exp-where {
+    margin: 0 0 0 auto;
+    white-space: nowrap;
+}
+
+.card-exp h3 {
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--text-strong);
+    margin: 0;
 }
 
 .exp-when {
-    margin: 0 0 0.3rem;
-    white-space: nowrap;
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--accent-strong);
 }
 
 .exp-org {
-    margin: 0.3rem 0 0;
+    margin: 0;
     font-size: 0.88rem;
-    font-weight: 600;
+    font-weight: 400;
     color: var(--text-strong);
 }
 
 .exp-where {
-    margin: 0.12rem 0 0;
     font-size: 0.79rem;
     color: var(--text-faint);
 }
 
-.exp-body h3 {
-    font-size: 1.02rem;
-    font-weight: 600;
-    color: var(--text-strong);
-    margin: 0 0 0.5rem;
-}
-
-.exp-body ul {
-    margin: 0;
-    padding-left: 1.2rem;
+.card-exp ul {
+    margin-top: 0.7rem;
 }
 
 .grid-2 {
@@ -446,26 +482,30 @@ h2 {
 .hax-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    gap: 1rem;
+    border-radius: 0 0 3px 3px;
+    overflow: clip;
 }
 
-/* ---------- Cards ---------- */
+/* right/bottom hairlines on every cell draw the inner grid lines; the ones
+   on the outer edge fall outside the grid and are clipped */
+.hax-grid > .card {
+    box-shadow: 1px 0 0 var(--border), 0 1px 0 var(--border);
+}
+
+/* ---------- Cards (entries inside a section panel) ---------- */
 
 .card {
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: 12px;
+    background: transparent;
     padding: 1.15rem 1.25rem;
 }
 
 a.card {
     display: block;
     color: inherit;
-    transition: border-color 0.15s, background 0.15s;
+    transition: background 0.15s;
 }
 
 a.card:hover {
-    border-color: var(--accent);
     background: var(--surface-hover);
     text-decoration: none;
 }
@@ -521,6 +561,39 @@ a.card:hover {
 
 .card li:last-child {
     margin-bottom: 0;
+}
+
+/* small logo in a left gutter beside an entry; reusable on any card or
+   edu-item: add .with-logo, then an <img class="entry-logo"> followed by a
+   <div> holding the entry's text */
+.with-logo {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+}
+
+.with-logo > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.entry-logo {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    margin-top: 0.1rem;
+}
+
+/* for logos on a square white background, e.g. Haverford's seal */
+.entry-logo.round {
+    border-radius: 50%;
+}
+
+.edu-item .entry-logo {
+    width: 30px;
+    height: 30px;
+    margin-top: 0;
 }
 
 .placement {
@@ -606,28 +679,6 @@ footer {
 
     .card-head .subtitle {
         white-space: normal;
-    }
-
-    .card-exp {
-        grid-template-columns: 1fr;
-        gap: 0.6rem;
-    }
-
-    .exp-meta {
-        border-right: none;
-        padding-right: 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.15rem 0.6rem;
-        align-items: baseline;
-    }
-
-    .exp-org {
-        margin: 0;
-    }
-
-    .exp-where {
-        margin: 0;
     }
 
     .panel-id {
